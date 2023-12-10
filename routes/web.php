@@ -19,5 +19,20 @@ use App\Http\Controllers\ListingController;
 //all listings
 Route::get('/', [ListingController::class, 'index']);
 
+//show create form
+Route::get('/listings/create', [ListingController::class, 'create']);
+
+//store listing data
+Route::post('/listings', [ListingController::class, 'store']);
+
+//show edit form
+Route::get('/listing/{listing}/edit', [ListingController::class, 'edit']);
+
+//update
+Route::put('/listing/{listing}', [ListingController::class, 'update']);
+
+//delet
+Route::delete('/listing/{listing}', [ListingController::class, 'destroy']);
+
 //single listing
 Route::get('/listing/{listing}', [ListingController::class, 'show']);
